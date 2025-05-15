@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coleção de Paletas de Cores</title>
+    <style>
+        :root {
+            --shadow-color: 0deg 0% 50%;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+            text-align: center;
+            color: #212529;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2b2d42;
+            margin-bottom: 50px;
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, #4361ee, #3a0ca3);
+            border-radius: 2px;
+        }
+        .palette-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 0 auto;
+            max-width: 1600px;
+            padding: 20px;
+        }
+        .palette {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+                        0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.34),
+                        2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.34),
+                        5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.34);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .palette:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .palette-title {
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            color: #2b2d42;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f8f9fa;
+            position: relative;
+        }
+        .palette-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: currentColor;
+        }
+        .color-square {
+            width: 100%;
+            height: 90px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 12px;
+            box-sizing: border-box;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .color-square:hover {
+            transform: scale(1.03);
+        }
+        .color-square::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: rgba(255,255,255,0.2);
+        }
+        .dark-text {
+            color: #333;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.7);
+        }
+        .color-label {
+            background: rgba(0,0,0,0.6);
+            padding: 4px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .category-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 768px) {
+            .palette-container {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Coleção de Paletas de Cores</h1>
+    
+    <div class="palette-container">
+        <!-- Paleta 1 - Pensador Profundo -->
+        <div class="palette">
+            <div class="palette-title">Pensador Profundo</div>
+            <div class="color-square" style="background-color: #F8F5F2;"><span class="color-label dark-text">Fundo: #F8F5F2</span></div>
+            <div class="color-square" style="background-color: #2C3E50;"><span class="color-label">Cabeçalho: #2C3E50</span></div>
+            <div class="color-square" style="background-color: #E74C3C;"><span class="color-label">Títulos: #E74C3C</span></div>
+            <div class="color-square" style="background-color: #34495E;"><span class="color-label">Texto: #34495E</span></div>
+            <div class="color-square" style="background-color: #3498DB;"><span class="color-label">Destaques: #3498DB</span></div>
+        </div>
+        
+        <!-- Paleta 2 - Criatividade Vibrante -->
+        <div class="palette">
+            <div class="palette-title">Criatividade Vibrante</div>
+            <div class="color-square" style="background-color: #FFFFFF;"><span class="color-label dark-text">Fundo: #FFFFFF</span></div>
+            <div class="color-square" style="background-color: #FF6B6B;"><span class="color-label">Cabeçalho: #FF6B6B</span></div>
+            <div class="color-square" style="background-color: #4ECDC4;"><span class="color-label dark-text">Títulos: #4ECDC4</span></div>
+            <div class="color-square" style="background-color: #292F36;"><span class="color-label">Texto: #292F36</span></div>
+            <div class="color-square" style="background-color: #FFE66D;"><span class="color-label dark-text">Destaques: #FFE66D</span></div>
+        </div>
+        
+        <!-- Paleta 3 - Natureza Minimalista -->
+        <div class="palette">
+            <div class="palette-title">Natureza Minimalista</div>
+            <div class="color-square" style="background-color: #F7FFF7;"><span class="color-label dark-text">Fundo: #F7FFF7</span></div>
+            <div class="color-square" style="background-color: #6B8F71;"><span class="color-label">Cabeçalho: #6B8F71</span></div>
+            <div class="color-square" style="background-color: #A5C4D4;"><span class="color-label dark-text">Títulos: #A5C4D4</span></div>
+            <div class="color-square" style="background-color: #3A405A;"><span class="color-label">Texto: #3A405A</span></div>
+            <div class="color-square" style="background-color: #F9DEC9;"><span class="color-label dark-text">Destaques: #F9DEC9</span></div>
+        </div>
+        
+        <!-- Paleta 4 - Fórum Retro -->
+        <div class="palette">
+            <div class="palette-title">Fórum Retro</div>
+            <div class="color-square" style="background-color: #FFF5D6;"><span class="color-label dark-text">Fundo: #FFF5D6</span></div>
+            <div class="color-square" style="background-color: #FF6D00;"><span class="color-label">Cabeçalho: #FF6D00</span></div>
+            <div class="color-square" style="background-color: #5E239D;"><span class="color-label">Títulos: #5E239D</span></div>
+            <div class="color-square" style="background-color: #1A1A1A;"><span class="color-label">Texto: #1A1A1A</span></div>
+            <div class="color-square" style="background-color: #00B4D8;"><span class="color-label">Destaques: #00B4D8</span></div>
+        </div>
+
+        <!-- Paleta 5 - Tecnologia Moderna -->
+        <div class="palette">
+            <div class="palette-title">Tecnologia Moderna</div>
+            <div class="color-square" style="background-color: #F0F4F8;"><span class="color-label dark-text">Fundo: #F0F4F8</span></div>
+            <div class="color-square" style="background-color: #0A2463;"><span class="color-label">Cabeçalho: #0A2463</span></div>
+            <div class="color-square" style="background-color: #3E92CC;"><span class="color-label">Títulos: #3E92CC</span></div>
+            <div class="color-square" style="background-color: #1E1E24;"><span class="color-label">Texto: #1E1E24</span></div>
+            <div class="color-square" style="background-color: #D8315B;"><span class="color-label">Destaques: #D8315B</span></div>
+        </div>
+
+        <!-- Paleta 6 - Elegância Clássica -->
+        <div class="palette">
+            <div class="palette-title">Elegância Clássica</div>
+            <div class="color-square" style="background-color: #FAFAFA;"><span class="color-label dark-text">Fundo: #FAFAFA</span></div>
+            <div class="color-square" style="background-color: #333333;"><span class="color-label">Cabeçalho: #333333</span></div>
+            <div class="color-square" style="background-color: #8D6E63;"><span class="color-label">Títulos: #8D6E63</span></div>
+            <div class="color-square" style="background-color: #4E4E4E;"><span class="color-label">Texto: #4E4E4E</span></div>
+            <div class="color-square" style="background-color: #B38867;"><span class="color-label">Destaques: #B38867</span></div>
+        </div>
+
+        <!-- Paleta 7 - Energia Vibrante -->
+        <div class="palette">
+            <div class="palette-title">Energia Vibrante</div>
+            <div class="color-square" style="background-color: #FDFFFC;"><span class="color-label dark-text">Fundo: #FDFFFC</span></div>
+            <div class="color-square" style="background-color: #FF9F1C;"><span class="color-label">Cabeçalho: #FF9F1C</span></div>
+            <div class="color-square" style="background-color: #E71D36;"><span class="color-label">Títulos: #E71D36</span></div>
+            <div class="color-square" style="background-color: #011627;"><span class="color-label">Texto: #011627</span></div>
+            <div class="color-square" style="background-color: #2EC4B6;"><span class="color-label">Destaques: #2EC4B6</span></div>
+        </div>
+
+        <!-- Paleta 8 - Natureza Serena -->
+        <div class="palette">
+            <div class="palette-title">Natureza Serena</div>
+            <div class="color-square" style="background-color: #F0F7F4;"><span class="color-label dark-text">Fundo: #F0F7F4</span></div>
+            <div class="color-square" style="background-color: #3C6E71;"><span class="color-label">Cabeçalho: #3C6E71</span></div>
+            <div class="color-square" style="background-color: #70AE6E;"><span class="color-label">Títulos: #70AE6E</span></div>
+            <div class="color-square" style="background-color: #284B63;"><span class="color-label">Texto: #284B63</span></div>
+            <div class="color-square" style="background-color: #D4B483;"><span class="color-label dark-text">Destaques: #D4B483</span></div>
+        </div>
+
+        <!-- Paleta 9 - Noturno Moderno -->
+        <div class="palette">
+            <div class="palette-title">Noturno Moderno</div>
+            <div class="color-square" style="background-color: #121212;"><span class="color-label">Fundo: #121212</span></div>
+            <div class="color-square" style="background-color: #1E1E1E;"><span class="color-label">Cabeçalho: #1E1E1E</span></div>
+            <div class="color-square" style="background-color: #BB86FC;"><span class="color-label">Títulos: #BB86FC</span></div>
+            <div class="color-square" style="background-color: #E1E1E1;"><span class="color-label dark-text">Texto: #E1E1E1</span></div>
+            <div class="color-square" style="background-color: #03DAC6;"><span class="color-label dark-text">Destaques: #03DAC6</span></div>
+        </div>
+
+        <!-- Paleta 10 - Romântico Suave -->
+        <div class="palette">
+            <div class="palette-title">Romântico Suave</div>
+            <div class="color-square" style="background-color: #FFF8F8;"><span class="color-label dark-text">Fundo: #FFF8F8</span></div>
+            <div class="color-square" style="background-color: #D4A5A5;"><span class="color-label">Cabeçalho: #D4A5A5</span></div>
+            <div class="color-square" style="background-color: #C78283;"><span class="color-label">Títulos: #C78283</span></div>
+            <div class="color-square" style="background-color: #4A4A4A;"><span class="color-label">Texto: #4A4A4A</span></div>
+            <div class="color-square" style="background-color: #E8C2CA;"><span class="color-label dark-text">Destaques: #E8C2CA</span></div>
+        </div>
+
+        <!-- Paleta 11 - Profissional Corporativo -->
+        <div class="palette">
+            <div class="palette-title">Profissional Corporativo</div>
+            <div class="color-square" style="background-color: #FFFFFF;"><span class="color-label dark-text">Fundo: #FFFFFF</span></div>
+            <div class="color-square" style="background-color: #003366;"><span class="color-label">Cabeçalho: #003366</span></div>
+            <div class="color-square" style="background-color: #0066CC;"><span class="color-label">Títulos: #0066CC</span></div>
+            <div class="color-square" style="background-color: #333333;"><span class="color-label">Texto: #333333</span></div>
+            <div class="color-square" style="background-color: #F2F2F2;"><span class="color-label dark-text">Destaques: #F2F2F2</span></div>
+        </div>
+
+        <!-- Paleta 12 - Festival de Cores -->
+        <div class="palette">
+            <div class="palette-title">Festival de Cores</div>
+            <div class="color-square" style="background-color: #F5F5F5;"><span class="color-label dark-text">Fundo: #F5F5F5</span></div>
+            <div class="color-square" style="background-color: #FF5722;"><span class="color-label">Cabeçalho: #FF5722</span></div>
+            <div class="color-square" style="background-color: #4CAF50;"><span class="color-label">Títulos: #4CAF50</span></div>
+            <div class="color-square" style="background-color: #212121;"><span class="color-label">Texto: #212121</span></div>
+            <div class="color-square" style="background-color: #FFC107;"><span class="color-label dark-text">Destaques: #FFC107</span></div>
+        </div>
+
+        <!-- Paleta 13 - Oceano Profundo -->
+        <div class="palette">
+            <div class="palette-title">Oceano Profundo</div>
+            <div class="color-square" style="background-color: #E6F7FF;"><span class="color-label dark-text">Fundo: #E6F7FF</span></div>
+            <div class="color-square" style="background-color: #005F73;"><span class="color-label">Cabeçalho: #005F73</span></div>
+            <div class="color-square" style="background-color: #0A9396;"><span class="color-label">Títulos: #0A9396</span></div>
+            <div class="color-square" style="background-color: #001219;"><span class="color-label">Texto: #001219</span></div>
+            <div class="color-square" style="background-color: #94D2BD;"><span class="color-label dark-text">Destaques: #94D2BD</span></div>
+        </div>
+
+        <!-- Paleta 14 - Café e Livros -->
+        <div class="palette">
+            <div class="palette-title">Café e Livros</div>
+            <div class="color-square" style="background-color: #F5EDE0;"><span class="color-label dark-text">Fundo: #F5EDE0</span></div>
+            <div class="color-square" style="background-color: #6F4E37;"><span class="color-label">Cabeçalho: #6F4E37</span></div>
+            <div class="color-square" style="background-color: #C4A484;"><span class="color-label dark-text">Títulos: #C4A484</span></div>
+            <div class="color-square" style="background-color: #3E2723;"><span class="color-label">Texto: #3E2723</span></div>
+            <div class="color-square" style="background-color: #D2B48C;"><span class="color-label dark-text">Destaques: #D2B48C</span></div>
+        </div>
+
+        <!-- Paleta 15 - Futurista Neon -->
+        <div class="palette">
+            <div class="palette-title">Futurista Neon</div>
+            <div class="color-square" style="background-color: #0D0221;"><span class="color-label">Fundo: #0D0221</span></div>
+            <div class="color-square" style="background-color: #240046;"><span class="color-label">Cabeçalho: #240046</span></div>
+            <div class="color-square" style="background-color: #00F5D4;"><span class="color-label dark-text">Títulos: #00F5D4</span></div>
+            <div class="color-square" style="background-color: #F7F7F7;"><span class="color-label dark-text">Texto: #F7F7F7</span></div>
+            <div class="color-square" style="background-color: #FF006E;"><span class="color-label">Destaques: #FF006E</span></div>
+        </div>
+
+        <!-- Paleta 16 - Minimalista Cinza -->
+        <div class="palette">
+            <div class="palette-title">Minimalista Cinza</div>
+            <div class="color-square" style="background-color: #FFFFFF;"><span class="color-label dark-text">Fundo: #FFFFFF</span></div>
+            <div class="color-square" style="background-color: #616161;"><span class="color-label">Cabeçalho: #616161</span></div>
+            <div class="color-square" style="background-color: #9E9E9E;"><span class="color-label dark-text">Títulos: #9E9E9E</span></div>
+            <div class="color-square" style="background-color: #212121;"><span class="color-label">Texto: #212121</span></div>
+            <div class="color-square" style="background-color: #E0E0E0;"><span class="color-label dark-text">Destaques: #E0E0E0</span></div>
+        </div>
+
+        <!-- Paleta 17 - Primavera Fresca -->
+        <div class="palette">
+            <div class="palette-title">Primavera Fresca</div>
+            <div class="color-square" style="background-color: #F8FDFF;"><span class="color-label dark-text">Fundo: #F8FDFF</span></div>
+            <div class="color-square" style="background-color: #4ECDC4;"><span class="color-label dark-text">Cabeçalho: #4ECDC4</span></div>
+            <div class="color-square" style="background-color: #FF6B6B;"><span class="color-label">Títulos: #FF6B6B</span></div>
+            <div class="color-square" style="background-color: #292F36;"><span class="color-label">Texto: #292F36</span></div>
+            <div class="color-square" style="background-color: #C7F9CC;"><span class="color-label dark-text">Destaques: #C7F9CC</span></div>
+        </div>
+
+        <!-- Paleta 18 - Outono Quente -->
+        <div class="palette">
+            <div class="palette-title">Outono Quente</div>
+            <div class="color-square" style="background-color: #FFF3E6;"><span class="color-label dark-text">Fundo: #FFF3E6</span></div>
+            <div class="color-square" style="background-color: #D35400;"><span class="color-label">Cabeçalho: #D35400</span></div>
+            <div class="color-square" style="background-color: #E67E22;"><span class="color-label">Títulos: #E67E22</span></div>
+            <div class="color-square" style="background-color: #4A235A;"><span class="color-label">Texto: #4A235A</span></div>
+            <div class="color-square" style="background-color: #F39C12;"><span class="color-label">Destaques: #F39C12</span></div>
+        </div>
+
+        <!-- Paleta 19 - Aurora Boreal -->
+        <div class="palette">
+            <div class="palette-title">Aurora Boreal</div>
+            <div class="color-square" style="background-color: #0B0B1D;"><span class="color-label">Fundo: #0B0B1D</span></div>
+            <div class="color-square" style="background-color: #1D2671;"><span class="color-label">Cabeçalho: #1D2671</span></div>
+            <div class="color-square" style="background-color: #5F2F8E;"><span class="color-label">Títulos: #5F2F8E</span></div>
+            <div class="color-square" style="background-color: #C33764;"><span class="color-label">Texto: #C33764</span></div>
+            <div class="color-square" style="background-color: #00C9FF;"><span class="color-label">Destaques: #00C9FF</span></div>
+        </div>
+
+        <!-- Paleta 20 - Jardim Secreto -->
+        <div class="palette">
+            <div class="palette-title">Jardim Secreto</div>
+            <div class="color-square" style="background-color: #F1F8F1;"><span class="color-label dark-text">Fundo: #F1F8F1</span></div>
+            <div class="color-square" style="background-color: #2E8B57;"><span class="color-label">Cabeçalho: #2E8B57</span></div>
+            <div class="color-square" style="background-color: #8FBC8F;"><span class="color-label dark-text">Títulos: #8FBC8F</span></div>
+            <div class="color-square" style="background-color: #556B2F;"><span class="color-label">Texto: #556B2F</span></div>
+            <div class="color-square" style="background-color: #DEB887;"><span class="color-label dark-text">Destaques: #DEB887</span></div>
+        </div>
+
+        <!-- Paleta 21 - Metrópole Cinza -->
+        <div class="palette">
+            <div class="palette-title">Metrópole Cinza</div>
+            <div class="color-square" style="background-color: #ECECEC;"><span class="color-label dark-text">Fundo: #ECECEC</span></div>
+            <div class="color-square" style="background-color: #4A4A4A;"><span class="color-label">Cabeçalho: #4A4A4A</span></div>
+            <div class="color-square" style="background-color: #7B7B7B;"><span class="color-label">Títulos: #7B7B7B</span></div>
+            <div class="color-square" style="background-color: #2D2D2D;"><span class="color-label">Texto: #2D2D2D</span></div>
+            <div class="color-square" style="background-color: #A8A8A8;"><span class="color-label dark-text">Destaques: #A8A8A8</span></div>
+        </div>
+
+        <!-- Paleta 22 - Praia Tropical -->
+        <div class="palette">
+            <div class="palette-title">Praia Tropical</div>
+            <div class="color-square" style="background-color: #F5F5DC;"><span class="color-label dark-text">Fundo: #F5F5DC</span></div>
+            <div class="color-square" style="background-color: #008080;"><span class="color-label">Cabeçalho: #008080</span></div>
+            <div class="color-square" style="background-color: #4682B4;"><span class="color-label">Títulos: #4682B4</span></div>
+            <div class="color-square" style="background-color: #556B2F;"><span class="color-label">Texto: #556B2F</span></div>
+            <div class="color-square" style="background-color: #F4A460;"><span class="color-label dark-text">Destaques: #F4A460</span></div>
+        </div>
+
+        <!-- Paleta 23 - High-Tech -->
+        <div class="palette">
+            <div class="palette-title">High-Tech</div>
+            <div class="color-square" style="background-color: #000000;"><span class="color-label">Fundo: #000000</span></div>
+            <div class="color-square" style="background-color: #121212;"><span class="color-label">Cabeçalho: #121212</span></div>
+            <div class="color-square" style="background-color: #00FFFF;"><span class="color-label dark-text">Títulos: #00FFFF</span></div>
+            <div class="color-square" style="background-color: #CCCCCC;"><span class="color-label dark-text">Texto: #CCCCCC</span></div>
+            <div class="color-square" style="background-color: #FF00FF;"><span class="color-label">Destaques: #FF00FF</span></div>
+        </div>
+
+        <!-- Paleta 24 - Café Expresso -->
+        <div class="palette">
+            <div class="palette-title">Café Expresso</div>
+            <div class="color-square" style="background-color: #E6E0D6;"><span class="color-label dark-text">Fundo: #E6E0D6</span></div>
+            <div class="color-square" style="background-color: #4B3621;"><span class="color-label">Cabeçalho: #4B3621</span></div>
+            <div class="color-square" style="background-color: #6F4E37;"><span class="color-label">Títulos: #6F4E37</span></div>
+            <div class="color-square" style="background-color: #3E2723;"><span class="color-label">Texto: #3E2723</span></div>
+            <div class="color-square" style="background-color: #BCAAA4;"><span class="color-label dark-text">Destaques: #BCAAA4</span></div>
+        </div>
+
+        <!-- Paleta 25 - Neon Dreams -->
+        <div class="palette">
+            <div class="palette-title">Neon Dreams</div>
+            <div class="color-square" style="background-color: #0F0F1B;"><span class="color-label">Fundo: #0F0F1B</span></div>
+            <div class="color-square" style="background-color: #6A00F4;"><span class="color-label">Cabeçalho: #6A00F4</span></div>
+            <div class="color-square" style="background-color: #FF00C1;"><span class="color-label">Títulos: #FF00C1</span></div>
+            <div class="color-square" style="background-color: #00F5D4;"><span class="color-label dark-text">Texto: #00F5D4</span></div>
+            <div class="color-square" style="background-color: #FEE440;"><span class="color-label dark-text">Destaques: #FEE440</span></div>
+        </div>
+
+        <!-- Paleta 26 - Floresta Encantada -->
+        <div class="palette">
+            <div class="palette-title">Floresta Encantada</div>
+            <div class="color-square" style="background-color: #E8F5E9;"><span class="color-label dark-text">Fundo: #E8F5E9</span></div>
+            <div class="color-square" style="background-color: #1B5E20;"><span class="color-label">Cabeçalho: #1B5E20</span></div>
+            <div class="color-square" style="background-color: #4CAF50;"><span class="color-label">Títulos: #4CAF50</span></div>
+            <div class="color-square" style="background-color: #2E7D32;"><span class="color-label">Texto: #2E7D32</span></div>
+            <div class="color-square" style="background-color: #8BC34A;"><span class="color-label dark-text">Destaques: #8BC34A</span></div>
+        </div>
+
+        <!-- Paleta 27 - Deserto Quente -->
+        <div class="palette">
+            <div class="palette-title">Deserto Quente</div>
+            <div class="color-square" style="background-color: #FFF3E0;"><span class="color-label dark-text">Fundo: #FFF3E0</span></div>
+            <div class="color-square" style="background-color: #E64A19;"><span class="color-label">Cabeçalho: #E64A19</span></div>
+            <div class="color-square" style="background-color: #FF7043;"><span class="color-label">Títulos: #FF7043</span></div>
+            <div class="color-square" style="background-color: #BF360C;"><span class="color-label">Texto: #BF360C</span></div>
+            <div class="color-square" style="background-color: #FFAB40;"><span class="color-label dark-text">Destaques: #FFAB40</span></div>
+        </div>
+
+        <!-- Paleta 28 - Gelo Azul -->
+        <div class="palette">
+            <div class="palette-title">Gelo Azul</div>
+            <div class="color-square" style="background-color: #E1F5FE;"><span class="color-label dark-text">Fundo: #E1F5FE</span></div>
+            <div class="color-square" style="background-color: #0277BD;"><span class="color-label">Cabeçalho: #0277BD</span></div>
+            <div class="color-square" style="background-color: #4FC3F7;"><span class="color-label">Títulos: #4FC3F7</span></div>
+            <div class="color-square" style="background-color: #01579B;"><span class="color-label">Texto: #01579B</span></div>
+            <div class="color-square" style="background-color: #B3E5FC;"><span class="color-label dark-text">Destaques: #B3E5FC</span></div>
+        </div>
+
+        <!-- Paleta 29 - Ouro e Mármore -->
+        <div class="palette">
+            <div class="palette-title">Ouro e Mármore</div>
+            <div class="color-square" style="background-color: #FAFAFA;"><span class="color-label dark-text">Fundo: #FAFAFA</span></div>
+            <div class="color-square" style="background-color: #3E2723;"><span class="color-label">Cabeçalho: #3E2723</span></div>
+            <div class="color-square" style="background-color: #5D4037;"><span class="color-label">Títulos: #5D4037</span></div>
+            <div class="color-square" style="background-color: #212121;"><span class="color-label">Texto: #212121</span></div>
+            <div class="color-square" style="background-color: #FFD700;"><span class="color-label dark-text">Destaques: #FFD700</span></div>
+        </div>
+
+        <!-- Paleta 30 - Cyberpunk -->
+        <div class="palette">
+            <div class="palette-title">Cyberpunk</div>
+            <div class="color-square" style="background-color: #0A0A12;"><span class="color-label">Fundo: #0A0A12</span></div>
+            <div class="color-square" style="background-color: #1A1A2E;"><span class="color-label">Cabeçalho: #1A1A2E</span></div>
+            <div class="color-square" style="background-color: #FF2A6D;"><span class="color-label">Títulos: #FF2A6D</span></div>
+            <div class="color-square" style="background-color: #05D9E8;"><span class="color-label">Texto: #05D9E8</span></div>
+            <div class="color-square" style="background-color: #D300C5;"><span class="color-label">Destaques: #D300C5</span></div>
+        </div>
+
+        <!-- Paleta 31 - Pastel Dreams -->
+        <div class="palette">
+            <div class="palette-title">Pastel Dreams</div>
+            <div class="color-square" style="background-color: #FFF9FB;"><span class="color-label dark-text">Fundo: #FFF9FB</span></div>
+            <div class="color-square" style="background-color: #FFB7B2;"><span class="color-label dark-text">Cabeçalho: #FFB7B2</span></div>
+            <div class="color-square" style="background-color: #FFDAC1;"><span class="color-label dark-text">Títulos: #FFDAC1</span></div>
+            <div class="color-square" style="background-color: #E2F0CB;"><span class="color-label dark-text">Texto: #E2F0CB</span></div>
+            <div class="color-square" style="background-color: #B5EAD7;"><span class="color-label dark-text">Destaques: #B5EAD7</span></div>
+        </div>
+
+        <!-- Paleta 32 - Terra e Fogo -->
+        <div class="palette">
+            <div class="palette-title">Terra e Fogo</div>
+            <div class="color-square" style="background-color: #F5F5F5;"><span class="color-label dark-text">Fundo: #F5F5F5</span></div>
+            <div class="color-square" style="background-color: #5D4037;"><span class="color-label">Cabeçalho: #5D4037</span></div>
+            <div class="color-square" style="background-color: #BF360C;"><span class="color-label">Títulos: #BF360C</span></div>
+            <div class="color-square" style="background-color: #3E2723;"><span class="color-label">Texto: #3E2723</span></div>
+            <div class="color-square" style="background-color: #FF6E40;"><span class="color-label">Destaques: #FF6E40</span></div>
+        </div>
+
+        <!-- Paleta 33 - Oceano Profundo 2 -->
+        <div class="palette">
+            <div class="palette-title">Oceano Profundo II</div>
+            <div class="color-square" style="background-color: #E0F7FA;"><span class="color-label dark-text">Fundo: #E0F7FA</span></div>
+            <div class="color-square" style="background-color: #006064;"><span class="color-label">Cabeçalho: #006064</span></div>
+            <div class="color-square" style="background-color: #00838F;"><span class="color-label">Títulos: #00838F</span></div>
+            <div class="color-square" style="background-color: #263238;"><span class="color-label">Texto: #263238</span></div>
+            <div class="color-square" style="background-color: #4DD0E1;"><span class="color-label">Destaques: #4DD0E1</span></div>
+        </div>
+
+        <!-- Paleta 34 - Vinho e Veludo -->
+        <div class="palette">
+            <div class="palette-title">Vinho e Veludo</div>
+            <div class="color-square" style="background-color: #F5F5F5;"><span class="color-label dark-text">Fundo: #F5F5F5</span></div>
+            <div class="color-square" style="background-color: #6A1B9A;"><span class="color-label">Cabeçalho: #6A1B9A</span></div>
+            <div class="color-square" style="background-color: #9C27B0;"><span class="color-label">Títulos: #9C27B0</span></div>
+            <div class="color-square" style="background-color: #4A148C;"><span class="color-label">Texto: #4A148C</span></div>
+            <div class="color-square" style="background-color: #CE93D8;"><span class="color-label">Destaques: #CE93D8</span></div>
+        </div>
+
+        <!-- Paleta 35 - Industrial -->
+        <div class="palette">
+            <div class="palette-title">Industrial</div>
+            <div class="color-square" style="background-color: #E0E0E0;"><span class="color-label dark-text">Fundo: #E0E0E0</span></div>
+            <div class="color-square" style="background-color: #424242;"><span class="color-label">Cabeçalho: #424242</span></div>
+            <div class="color-square" style="background-color: #616161;"><span class="color-label">Títulos: #616161</span></div>
+            <div class="color-square" style="background-color: #212121;"><span class="color-label">Texto: #212121</span></div>
+            <div class="color-square" style="background-color: #9E9E9E;"><span class="color-label dark-text">Destaques: #9E9E9E</span></div>
+        </div>
+
+        <!-- Paleta 36 - Aurora Boreal 2 -->
+        <div class="palette">
+            <div class="palette-title">Aurora Boreal II</div>
+            <div class="color-square" style="background-color: #0A0A1A;"><span class="color-label">Fundo: #0A0A1A</span></div>
+            <div class="color-square" style="background-color: #1A237E;"><span class="color-label">Cabeçalho: #1A237E</span></div>
+            <div class="color-square" style="background-color: #4A148C;"><span class="color-label">Títulos: #4A148C</span></div>
+            <div class="color-square" style="background-color: #00B0FF;"><span class="color-label">Texto: #00B0FF</span></div>
+            <div class="color-square" style="background-color: #00E5FF;"><span class="color-label">Destaques: #00E5FF</span></div>
+        </div>
+    </div>
+</body>
+</html>
